@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap" rel="stylesheet">
+
+  <!-- Css style -->
+  <link rel="stylesheet" href="main.css">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="logo d-flex justify-content-start align-items-center">
+      <img src="images/logo.svg" alt="logo">
+    </header>
+
+    <!--hero-->
+    <div class="hero-desktop">
+      <img class="hero-desktop-img d-block w-100 mb-5" src="images/hero-desktop.jpg" alt="hero-desktop">
+    </div>
+
+    <!--welcome page-->
+    <section class="welcome-page d-flex flex-column align-items-center text-center">
+     <div class="welcome-page-content">
+      <h1 class="welcome-page_title text-uppercase">
+        <span>We're</span>
+        <span>coming</span>
+        <span>soon</span>
+      </h1>
+      <p class="welcome-page_description p-4">
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+
+      <!--email-->
+      <div id="sectionEmail">
+        <form class="welcome-page_subscribe text-center" @submit.prevent="fetchAllEmails">
+          <input required="required" type="email" placeholder="Email Adress" v-model="emailAdd" class="mt-2 mb-2">
+          <button type="submit" class="icon">
+            <img class="btn-image" src="images/icon-arrow.svg" alt="submit button">
+          </button>
+        </form>
+        <p class="createdEmailMessage p-2 bg-info" v-show="createdEmailVisible">El correo {{emailAdd}} se ha creado correctamente</p>
+        <p class="erorrMessage p-2 bg-danger" v-show="errorMessageVisible">{{emailAdd}} ya existe</p>
+      </div>
+     </div>
+
+    </section>
+
+  </div>
+
+  <footer>
+    <p class="attribution m-5">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Maria Canals and Pedro Ninci</a>.
+    </p>
+  </footer>
+  <script src="app.js" defer></script>
+  <script src="https://unpkg.com/vue@next" ></script>
+</body>
+
+</html>
